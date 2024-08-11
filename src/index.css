@@ -30,6 +30,7 @@ h1 {
 .letter {
   padding: 0 0.2rem;
   margin: 0 0.2rem;
+  font-family: monospace;
 }
 
 .keyboard {
