@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Word from "./components/Word";
 import Stickman from "./components/Stickman";
@@ -8,7 +8,6 @@ function App() {
   const [selectedWord] = useState("example");
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState([]);
-
   const [gameOver, setGameOver] = useState(false);
   const [gameWon, setGameWon] = useState(false);
 
@@ -40,6 +39,21 @@ function App() {
       });
     }
   };
+
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      const letter = event.key.toLowerCase();
+      if (/^[a-z]$/.test(letter)) {
+        handleLetterClick(letter);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, [correctLetters, wrongGuesses, gameOver]);
 
   const handleRestart = () => {
     setCorrectLetters([]);
