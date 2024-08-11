@@ -67,7 +67,11 @@ function App() {
       <Header />
       <Stickman wrongGuesses={wrongGuesses.length} />
       <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-      <Keyboard letterClick={handleLetterClick} />
+      <Keyboard
+        letterClick={handleLetterClick}
+        correctLetters={correctLetters}
+        wrongGuesses={wrongGuesses}
+      />
       {gameOver && (
         <div className="game-over">
           {gameWon ? <p>You Won!</p> : <p>Game Over...</p>}
