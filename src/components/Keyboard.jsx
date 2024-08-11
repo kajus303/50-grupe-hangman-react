@@ -1,4 +1,4 @@
-function Keyboard({ letterClick, correctLetters, wrongGuesses }) {
+function Keyboard({ letterClick, correctLetters, wrongGuesses, gameOver }) {
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 
   return (
@@ -15,9 +15,9 @@ function Keyboard({ letterClick, correctLetters, wrongGuesses }) {
         return (
           <button
             key={letter}
-            onClick={() => letterClick(letter)}
+            onClick={() => !gameOver && letterClick(letter)}
             className={buttonClass}
-            disabled={isCorrect || isWrong}
+            disabled={isCorrect || isWrong || gameOver}
           >
             {letter}
           </button>

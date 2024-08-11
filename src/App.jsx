@@ -71,6 +71,7 @@ function App() {
         letterClick={handleLetterClick}
         correctLetters={correctLetters}
         wrongGuesses={wrongGuesses}
+        gameOver={gameOver}
       />
       {gameOver && (
         <div className="game-over">
