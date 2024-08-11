@@ -10,9 +10,25 @@ function App() {
   const [wrongGuesses, setWrongGuesses] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const [gameWon, setGameWon] = useState(false);
+  const [wins, setWins] = useState(0);
+  const [losses, setLosses] = useState(0);
+
+  useEffect(() => {
+    if (gameOver) {
+      if (gameWon) {
+        setWins((prevWins) => prevWins + 1);
+      } else {
+        setLosses((prevLosses) => prevLosses + 1);
+      }
+    }
+  }, [gameOver, gameWon]);
 
   const handleLetterClick = (letter) => {
-    if (correctLetters.includes(letter) || wrongGuesses.includes(letter)) {
+    if (
+      correctLetters.includes(letter) ||
+      wrongGuesses.includes(letter) ||
+      gameOver
+    ) {
       return;
     }
 
@@ -65,6 +81,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="scoreboard">
+        <p>Wins: {wins}</p>
+        <p>Losses: {losses}</p>
+      </div>
       <Stickman wrongGuesses={wrongGuesses.length} />
       <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       <Keyboard
