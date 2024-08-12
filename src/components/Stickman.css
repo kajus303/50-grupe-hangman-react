@@ -59,7 +59,7 @@
 
 .stickman-part.arm-right {
   position: relative;
-  top: 33px;
+  top: 32px;
   left: 61%;
   width: 40px;
   height: 8px;
@@ -69,23 +69,24 @@
 }
 
 .stickman-part.leg-left {
-  top: 85px;
-  left: calc(50% - 20px);
+  position: relative;
+  top: 65px;
+  left: -60%;
   width: 40px;
   height: 8px;
   background-color: black;
   transform-origin: right;
-  transform: rotate(30deg);
+  transform: rotate(-40deg);
 }
 
 .stickman-part.leg-right {
-  top: 85px;
-  left: calc(50% + 20px);
+  top: 80px;
+  left: 61%;
   width: 40px;
   height: 8px;
   background-color: black;
   transform-origin: left;
-  transform: rotate(-30deg);
+  transform: rotate(40deg);
 }
 
 @keyframes draw {
