@@ -1,24 +1,24 @@
-import head from "../assets/stickman-head.png";
-import body from "../assets/stickman-body.png";
-import armLeft from "../assets/stickman-arm-left.png";
-import armRight from "../assets/stickman-arm-right.png";
-import legLeft from "../assets/stickman-leg-left.png";
-import legRight from "../assets/stickman-leg-right.png";
 import "./Stickman.css";
+import gallows from "../assets/stickman-gallows.png";
 
 function Stickman({ wrongGuesses }) {
-  const images = [head, body, armLeft, armRight, legLeft, legRight];
+  const parts = [
+    { className: "head" },
+    { className: "body" },
+    { className: "arm-left" },
+    { className: "arm-right" },
+    { className: "leg-left" },
+    { className: "leg-right" },
+  ];
 
   return (
-    <div className="stickman">
-      {images.slice(0, wrongGuesses.length).map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`Stickman part ${index}`}
-          className="stickman-part"
-        />
-      ))}
+    <div className="stickman-container">
+      <img src={gallows} alt="Gallows" className="gallows" />
+      <div className="stickman">
+        {parts.slice(0, wrongGuesses.length).map(({ className }, index) => (
+          <div key={index} className={`stickman-part ${className}`} />
+        ))}
+      </div>
     </div>
   );
 }
