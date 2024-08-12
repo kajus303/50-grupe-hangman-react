@@ -2,8 +2,8 @@ body,
 html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
   color: #333;
   display: flex;
   justify-content: center;
@@ -12,39 +12,30 @@ html {
 
 .App {
   text-align: center;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 360px;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #333;
-}
-
 .scoreboard {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .scoreboard p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
-}
-
-.game-over {
-  margin-top: 10px;
+  color: #555;
 }
 
 .game-over p {
   font-size: 1.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .game-over button {
-  padding: 8px 16px;
+  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   background-color: #007bff;
@@ -55,32 +46,4 @@ h1 {
 
 .game-over button:hover {
   background-color: #0056b3;
-}
-
-.keyboard {
-  margin-top: 15px;
-}
-
-.letter-button {
-  padding: 10px;
-  margin: 2px;
-  font-size: 1rem;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.letter-button.correct {
-  background-color: #28a745;
-  color: white;
-}
-
-.letter-button.wrong {
-  background-color: #dc3545;
-  color: white;
-}
-
-.letter-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
 }
