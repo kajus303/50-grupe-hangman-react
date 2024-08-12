@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Word from "./components/Word";
 import Stickman from "./components/Stickman";
 import Keyboard from "./components/Keyboard";
-import "./App.css";
+import GameOverWindow from "./components/GameOverWindow";
 
 function App() {
   const [selectedWord] = useState("example");
@@ -95,10 +95,7 @@ function App() {
         gameOver={gameOver}
       />
       {gameOver && (
-        <div className="game-over">
-          {gameWon ? <p>You Won!</p> : <p>Game Over...</p>}
-          <button onClick={handleRestart}>Restart Game</button>
-        </div>
+        <GameOverWindow gameWon={gameWon} onRestart={handleRestart} />
       )}
     </div>
   );
