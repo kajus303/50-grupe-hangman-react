@@ -1,0 +1,18 @@
+.stickman {
+  position: relative;
+  height: 200px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.stickman-part {
+  position: absolute;
+  opacity: 0;
+  animation: draw 0.5s forwards;
+}
+
+@keyframes draw {
+  to {
+    opacity: 1;
+  }
+}

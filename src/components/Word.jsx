@@ -1,3 +1,5 @@
+import "./Word.css";
+
 function Word({ selectedWord, correctLetters }) {
   return (
     <div className="word">

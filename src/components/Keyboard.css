@@ -1,0 +1,29 @@
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.letter-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.letter-button.correct {
+  background-color: #28a745;
+  color: white;
+}
+
+.letter-button.wrong {
+  background-color: #dc3545;
+  color: white;
+}
+
+.letter-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

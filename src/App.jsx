@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Word from "./components/Word";
 import Stickman from "./components/Stickman";
 import Keyboard from "./components/Keyboard";
+import "./App.css";
 
 function App() {
   const [selectedWord] = useState("example");
@@ -85,7 +86,7 @@ function App() {
         <p>Wins: {wins}</p>
         <p>Losses: {losses}</p>
       </div>
-      <Stickman wrongGuesses={wrongGuesses.length} />
+      <Stickman wrongGuesses={wrongGuesses} />
       <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       <Keyboard
         letterClick={handleLetterClick}

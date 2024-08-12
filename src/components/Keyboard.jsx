@@ -1,3 +1,5 @@
+import "./Keyboard.css";
+
 function Keyboard({ letterClick, correctLetters, wrongGuesses, gameOver }) {
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 
