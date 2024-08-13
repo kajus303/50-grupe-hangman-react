@@ -53,20 +53,6 @@ html {
   margin-bottom: 20px;
 }
 
-.game-over button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-.game-over button:hover {
-  background-color: #0056b3;
-}
-
 @media (max-width: 768px) {
   .App {
     width: 100vw;
