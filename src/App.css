@@ -8,15 +8,18 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .App {
   text-align: center;
-  width: 360px;
+  width: 700px;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .scoreboard {
@@ -27,6 +30,22 @@ html {
   font-size: 1.1rem;
   font-weight: bold;
   color: #555;
+}
+
+.reset-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #e0a800;
 }
 
 .game-over p {
@@ -46,4 +65,30 @@ html {
 
 .game-over button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .App {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scoreboard {
+    margin-bottom: 10px;
+  }
+
+  .stickman-container,
+  .keyboard {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
