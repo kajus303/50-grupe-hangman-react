@@ -19,23 +19,44 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content h2 {
+.win-message {
   margin-bottom: 20px;
   font-size: 1.8rem;
-  color: #007bff;
+  color: #28a745;
 }
 
-.modal-content button {
+.lose-message {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #dc3545;
+}
+
+.win-button {
   padding: 10px 25px;
   font-size: 1.1rem;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
-.modal-content button:hover {
-  background-color: #0056b3;
+.win-button:hover {
+  background-color: #218838;
+}
+
+.lose-button {
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.lose-button:hover {
+  background-color: #c82333;
 }
