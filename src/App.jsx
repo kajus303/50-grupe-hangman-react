@@ -46,19 +46,16 @@ function App() {
     }
 
     if (selectedWord.includes(letter)) {
-      const newCorrectLetters = [...correctLetters, letter];
+      setCorrectLetters([...correctLetters, letter]);
 
-      setCorrectLetters(newCorrectLetters);
-
-      if (newCorrectLetters.length === new Set(selectedWord).size) {
+      if ([...correctLetters, letter].length === new Set(selectedWord).size) {
         setGameWon(true);
         setGameOver(true);
       }
     } else {
-      const newWrongGuesses = [...wrongGuesses, letter];
-      setWrongGuesses(newWrongGuesses);
+      setWrongGuesses([...wrongGuesses, letter]);
 
-      if (newWrongGuesses.length === 6) {
+      if (wrongGuesses.length + 1 >= 6) {
         setGameOver(true);
       }
     }
@@ -67,7 +64,7 @@ function App() {
   useEffect(() => {
     const handleKeydown = (event) => {
       const letter = event.key.toLowerCase();
-      if (/^[a-z]$/.test(letter)) {
+      if (/^[a-z]$/.test(letter) && !gameOver) {
         handleLetterClick(letter);
       }
     };

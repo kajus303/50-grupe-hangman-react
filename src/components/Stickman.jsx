@@ -2,22 +2,16 @@ import "./Stickman.css";
 import gallows from "../assets/stickman-gallows.png";
 
 function Stickman({ wrongGuesses }) {
-  const parts = [
-    "head",
-    "body",
-    "arm-left",
-    "arm-right",
-    "leg-left",
-    "leg-right",
-  ];
-
   return (
     <div className="stickman-container">
       <img src={gallows} alt="Gallows" className="gallows" />
       <div className="stickman">
-        {parts.slice(0, wrongGuesses.length).map((part, index) => (
-          <div key={index} className={`stickman-part ${part}`} />
-        ))}
+        {wrongGuesses > 0 && <div className="stickman-part head" />}
+        {wrongGuesses > 1 && <div className="stickman-part body" />}
+        {wrongGuesses > 2 && <div className="stickman-part arm-left" />}
+        {wrongGuesses > 3 && <div className="stickman-part arm-right" />}
+        {wrongGuesses > 4 && <div className="stickman-part leg-left" />}
+        {wrongGuesses > 5 && <div className="stickman-part leg-right" />}
       </div>
     </div>
   );

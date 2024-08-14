@@ -18,7 +18,7 @@
 .stickman {
   position: absolute;
   top: 7.5rem;
-  left: 62%;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 2;
 }
@@ -27,8 +27,6 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
-  animation: draw 0.5s forwards;
 }
 
 .stickman-part.head {
@@ -47,9 +45,8 @@
 }
 
 .stickman-part.arm-left {
-  position: relative;
   top: 40px;
-  left: -60%;
+  left: -20px;
   width: 40px;
   height: 8px;
   background-color: black;
@@ -58,39 +55,31 @@
 }
 
 .stickman-part.arm-right {
-  position: relative;
-  top: 32px;
-  left: 61%;
+  top: 40px;
+  left: 20px;
   width: 40px;
   height: 8px;
   background-color: black;
   transform-origin: left;
-  transform: rotate(28deg);
+  transform: rotate(30deg);
 }
 
 .stickman-part.leg-left {
-  position: relative;
-  top: 65px;
-  left: -60%;
+  top: 95px;
+  left: -20px;
   width: 40px;
   height: 8px;
   background-color: black;
   transform-origin: right;
-  transform: rotate(-40deg);
+  transform: rotate(-30deg);
 }
 
 .stickman-part.leg-right {
-  top: 80px;
-  left: 61%;
+  top: 95px;
+  left: 20px;
   width: 40px;
   height: 8px;
   background-color: black;
   transform-origin: left;
-  transform: rotate(40deg);
-}
-
-@keyframes draw {
-  to {
-    opacity: 1;
-  }
+  transform: rotate(30deg);
 }
