@@ -5,26 +5,26 @@ function Keyboard({ letterClick, correctLetters, wrongGuesses, gameOver }) {
 
   return (
     <div className="keyboard">
-      {letters.map((letter) => {
-        const isCorrect = correctLetters.includes(letter);
-        const isWrong = wrongGuesses.includes(letter);
-        const buttonClass = isCorrect
-          ? "letter-button correct"
-          : isWrong
-          ? "letter-button wrong"
-          : "letter-button";
-
-        return (
-          <button
-            key={letter}
-            onClick={() => !gameOver && letterClick(letter)}
-            className={buttonClass}
-            disabled={isCorrect || isWrong || gameOver}
-          >
-            {letter}
-          </button>
-        );
-      })}
+      {letters.map((letter) => (
+        <button
+          key={letter}
+          onClick={() => !gameOver && letterClick(letter)}
+          className={`letter-button ${
+            correctLetters.includes(letter)
+              ? "correct"
+              : wrongGuesses.includes(letter)
+              ? "wrong"
+              : ""
+          }`}
+          disabled={
+            correctLetters.includes(letter) ||
+            wrongGuesses.includes(letter) ||
+            gameOver
+          }
+        >
+          {letter}
+        </button>
+      ))}
     </div>
   );
 }

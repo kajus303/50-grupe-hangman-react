@@ -46,26 +46,21 @@ function App() {
     }
 
     if (selectedWord.includes(letter)) {
-      setCorrectLetters((currentLetters) => {
-        const newCorrectLetters = [...currentLetters, letter];
+      const newCorrectLetters = [...correctLetters, letter];
 
-        if (newCorrectLetters.length === new Set(selectedWord).size) {
-          setGameWon(true);
-          setGameOver(true);
-        }
+      setCorrectLetters(newCorrectLetters);
 
-        return newCorrectLetters;
-      });
+      if (newCorrectLetters.length === new Set(selectedWord).size) {
+        setGameWon(true);
+        setGameOver(true);
+      }
     } else {
-      setWrongGuesses((currentWrongGuesses) => {
-        const newWrongGuesses = [...currentWrongGuesses, letter];
+      const newWrongGuesses = [...wrongGuesses, letter];
+      setWrongGuesses(newWrongGuesses);
 
-        if (newWrongGuesses.length === 6) {
-          setGameOver(true);
-        }
-
-        return newWrongGuesses;
-      });
+      if (newWrongGuesses.length === 6) {
+        setGameOver(true);
+      }
     }
   };
 
