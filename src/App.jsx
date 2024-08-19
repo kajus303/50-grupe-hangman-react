@@ -8,7 +8,10 @@ import GameOverWindow from "./components/GameOverWindow";
 import "./App.css";
 
 function App() {
-  const [selectedWord] = useState("example");
+  const words = ["example", "react", "hangman", "programming", "javascript"];
+  const [selectedWord, setSelectedWord] = useState(
+    words[Math.floor(Math.random() * words.length)]
+  );
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState([]);
   const [gameOver, setGameOver] = useState(false);
@@ -77,6 +80,7 @@ function App() {
   }, [correctLetters, wrongGuesses, gameOver]);
 
   const handleRestart = () => {
+    setSelectedWord(words[Math.floor(Math.random() * words.length)]);
     setCorrectLetters([]);
     setWrongGuesses([]);
     setGameOver(false);
