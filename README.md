@@ -20,13 +20,14 @@ Make sure you have Node.js and npm installed on your system.
 1. Clone the repository:
 
    git clone https://github.com/kajus303/50-grupe-hangman-react.git
+
    cd 50-grupe-hangman-react
 
-2. Install the dependencies:
+3. Install the dependencies:
 
    npm install
 
-3. Run the development server:
+4. Run the development server:
 
    npm run dev
 
