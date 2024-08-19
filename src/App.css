@@ -55,28 +55,22 @@ html {
 
 @media (max-width: 768px) {
   .App {
+    width: 100vw;
+    height: auto;
+    margin: 0;
     padding: 10px;
     box-sizing: border-box;
-    justify-content: space-evenly;
   }
 
   .scoreboard {
-    margin-bottom: 8px;
-    font-size: 0.8rem;
+    margin-bottom: 10px;
   }
 
-  .stickman-container {
-    max-width: 100px;
-  }
-
+  .stickman-container,
   .keyboard {
-    flex-wrap: wrap;
+    flex-grow: 1;
+    display: flex;
     justify-content: center;
-  }
-
-  .keyboard .letter-button {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-    margin: 3px;
+    align-items: center;
   }
 }
